@@ -1,0 +1,88 @@
+<html>
+<head>
+	<!-- Author: 		ABABACAR NDIAYE -->
+	<!-- Date: 			2-10-2020 -->
+	<!-- Class:			CSCI 2240 - Client Side Programming -->
+	<!-- Instructor:	Darren Pearson -->
+    <title>Handout 2a - Part 1</title>
+
+	<style type="text/css">
+
+		body {				background-color: 	darkblue; }
+		#hourSection {		float: 				left;
+							width: 				50px;
+							height: 			25px; 
+							background-color: 	lightgray;
+							margin-left:		20px;}
+		#minuteSection {	float: 				left;
+							width: 				50px;
+							height: 			25px; 
+							background-color: 	lightgray;
+							margin-left:		20px;}
+		#secondSection {	float: 				left;
+							width: 				50px;
+							height: 			25px;
+							background-color: 	lightgray;
+							margin-left:		20px;}
+		#timeOfDaySection {	float: 				left;
+							width: 				50px;
+							height: 			25px;
+							background-color: 	lightgray;
+							margin-left:		20px;}					
+		#button1 {			clear:				both;
+							margin-left: 		20px;
+							margin-top:			70px}
+		#container {		border: 			black solid 5px;
+							background-color:	lightblue;
+							margin:				20px;
+							padding:			20px;
+							width:				300px;}
+	</style>
+
+	<script type="text/javascript">	
+
+		function displayTime() { 
+
+			var rightNow = new Date();
+
+			var currentHour = rightNow.getHours();
+
+			var currentMinute = rightNow.getMinutes();
+
+			var currentSecond = rightNow.getSeconds();
+
+			var timeOfDay ="PM";
+			(currentHour > 11) ? (currentHour = currentHour - 12) : (timeOfDay = "AM");						
+
+			document.getElementById("hourSection").value = currentHour;
+			document.getElementById("minuteSection").value = currentMinute;
+			document.getElementById("secondSection").value = currentSecond;
+			document.getElementById("timeOfDaySection").value = timeOfDay;
+			
+			}		
+
+	</script>
+
+</head>
+
+<body onload="displayTime()">
+
+<div id="container">
+	<h1>Date Example</h1>
+
+	<form action="" method="post" name="clockArea">
+		<input type="text" name="hourSection" id="hourSection"/>
+		<input type="text" name="minuteSection" id="minuteSection"/>
+		<input type="text" name="secondSection" id="secondSection"/>
+		<input type="text" name="timeOfDaySection" id="timeOfDaySection"/>
+	</form>
+	
+	<div name="button1" id="button1">	
+		<input type="button" value="Update Time" onclick="displayTime()"/>
+	</div>
+
+</div>
+
+<body>
+
+</html>
